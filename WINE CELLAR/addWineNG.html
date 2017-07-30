@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Wine add NG</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+  <!-- <link href="wine-style.css" rel="stylesheet" />-->
+  <!-- first bootstrap.css, then jQuery, then bootstrap.js-->
+  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="js/wines.js"></script> 
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  
+
+<style>
+  /* when we want to fix the menu bar, class affix, tag <nav data-spy="affix"> */
+  	.affix {
+    	top: 0;
+    	width: 100%;
+      z-index:9999;
+  	}
+
+  	.affix + .container-fluid {
+    	padding-top: 70px;
+  	}
+</style>
+</head>
+
+<body ng-app ng-controller="WineController">
+
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-sm-6 col-md-3"> 
+      		<img src="images/heading_image.jpg" class="img-circle img-responsive" style="width:300px">      
+    	</div>
+
+    	<div class="col-sm-6 col-md-9">
+      		<h1>Wine cellar</h1>
+      		<p class="small">A wine cellar is a storage room for wine in bottles or barrels, or more rarely in carboys, amphorae, or plastic containers. In an active wine cellar, important factors such as temperature and humidity are maintained by a climate control system. In contrast, passive wine cellars are not climate-controlled, and are usually built underground to reduce temperature swings. An aboveground wine cellar is often called a wine room, while a small wine cellar (fewer than 500 bottles) is sometimes termed a wine closet. The household department responsible for the storage, care and service of wine in a great mediaeval house was termed the buttery. Large wine cellars date back over 3700 years.</p>     
+    	</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="280">
+	<div class="container-fluid">
+   		<div class="navbar-header">
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        		<!-- every "icon-bar" is one line on the button -->
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>        		
+      		</button>
+      		<a class="navbar-brand" href="#">Wine celler</a>
+    	</div>
+    	<div class="collapse navbar-collapse" id="myNavbar">
+      		<ul class="nav navbar-nav">
+        		<li><a href="wineNG.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        		<li class="active"><a href="addWineNG.html">Add wine</a></li>
+            <li><a href="wineTableNG.html">Wine table</a></li>
+      		</ul>
+      		<ul class="nav navbar-nav navbar-right">
+        		<li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About us</a></li>
+      		</ul>
+    	</div>
+    </div>
+</nav>
+<!-- <div class="container-fluid">
+  <table id="wineInput" >             
+    <tr>
+      <td class="col-sm-2" for="inputSuccess">Name: </td>
+      <td class="col-sm-10">
+        <input type="text" class="form-control" id="inputSuccess" name="nameInput"/>
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </td>
+    </tr>               
+    <tr>
+      <td>Description: </td>
+      <td><textarea class="form-control" rows="5" cols="15" name="descriptionInput"></textarea></td>
+    </tr>
+    <tr>
+      <td>Year: </td>
+      <td><input class="form-control" type="text" name="yearInput"/></td>
+    </tr>
+    <tr>
+      <td>Grapes: </td>
+      <td><input class="form-control" type="text" name="grapesInput"/></td>
+    </tr>
+    <tr>
+      <td>Country: </td>
+      <td><input class="form-control" type="text" name="countryInput"/></td>
+    </tr>
+    <tr>
+      <td>Region: </td>
+      <td><input class="form-control" type="text" name="regionInput"/></td>
+    </tr> 
+    <tr>
+      <td><input class="form-control" id="addBtn" type="submit" value="Dodaj"/></td>         
+      <td><span id="errMsgAddWine" style="color: red"></span></td>
+    </tr>
+  </table>
+</div> -->
+
+<div class="container-fluid">
+  <form class="form-horizontal" role="form">
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label col-sm-2" for="name">Name: </label>
+        <div class="col-sm-10">
+          <input type="text" name="nameInput" class="form-control" id="name" placeholder="Enter wine name">
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+    </div>
+      
+    <div class="form-group has-warning has-feedback">
+      <label class="control-label col-sm-2" for="description">Description: </label>
+        <div class="col-sm-10"> 
+          <textarea rows="5" cols="15" class="form-control" id="description" name="descriptionInput" placeholder="Enter description"></textarea>
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+    </div>
+
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label col-sm-2" for="year">Year: </label>
+        <div class="col-sm-10">
+          <input type="text" name="yearInput" class="form-control" id="year" placeholder="Enter year">
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+    </div>
+
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label col-sm-2" for="grapes">Grapes: </label>
+        <div class="col-sm-10">
+          <input type="text" name="grapesInput" class="form-control" id="grapes" placeholder="Enter grape name">
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+    </div>
+
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label col-sm-2" for="country">Country: </label>
+        <div class="col-sm-10">
+          <input type="text" name="countryInput" class="form-control" id="country" placeholder="Enter country">
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+    </div>
+
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label col-sm-2" for="Warning">Region: </label>
+        <div class="col-sm-10">
+          <input type="text" name="regionInput" class="form-control" id="region" placeholder="Enter region">
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        </div>
+    </div>  
+        
+         <div class="form-group"> 
+          <div class="col-sm-offset-2 col-sm-5">
+          <!-- <input id="addBtn" type="submit" value="Dodaj"> -->
+              <button type="submit" class="btn btn-default" id="addBtn">Submit</button>
+          </div>
+          <div class="col-sm-5">
+            <span id="errMsgAddWine" style="color: red"></span>
+          </div>
+        </div>
+    </form>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="js/wine-controllerNG.js"></script>
+</body>
+</html>

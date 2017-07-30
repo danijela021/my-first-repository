@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Wine list filled with AngularJS</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+		<!-- The main CSS file -->
+		<link href="css/wine-style.css" rel="stylesheet" />
+
+		
+	</head>
+
+	<!-- Declare a new AngularJS app and associate the controller -->
+	<body ng-app ng-controller="WineController">
+
+		<form>
+
+			<h1>Wine</h1>
+
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Country</th>
+				<th>Price</th>
+			</tr>
+			<tr ng-repeat="wine in wines" ng-click="toggleActive(wine)" ng-class="{active:wine.active}">
+				<td>{{wine.name}}</td>
+				<td>{{wine.country}}</td>
+				<td><span>{{wine.price | currency}}</span></td>
+			</tr>
+			<tr class="total">
+				<!-- Calculate the total price of all chosen services. Format it as currency. -->
+				<td colspan="3">Total: <span>{{total() | currency}}</span></td>
+			</tr>
+		</table>
+		</form>
+		
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="js/wine-controllerNG.js"></script>
+	</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Wine table NG-include</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+  <!--<link href="css/wine-style.css" rel="stylesheet" />-->
+  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="js/wines.js"></script> 
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  
+
+<style>
+  /* when we want to fix the menu bar, class affix, tag <nav data-spy="affix"> */
+  	.affix {
+    	top: 0;
+    	width: 100%;
+      z-index:9999;
+  	}
+
+  	.affix + .container-fluid {
+    	padding-top: 70px;
+  	}
+</style>
+</head>
+
+<body>
+
+<div ng-app ng-controller="WineController">
+
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-sm-6 col-md-3"> 
+      		<img src="images/heading_image.jpg" class="img-circle img-responsive" style="width:300px">      
+    	</div>
+
+    	<div class="col-sm-6 col-md-9">
+      		<h1>Wine cellar</h1>
+      		<p class="small">A wine cellar is a storage room for wine in bottles or barrels, or more rarely in carboys, amphorae, or plastic containers. In an active wine cellar, important factors such as temperature and humidity are maintained by a climate control system. In contrast, passive wine cellars are not climate-controlled, and are usually built underground to reduce temperature swings. An aboveground wine cellar is often called a wine room, while a small wine cellar (fewer than 500 bottles) is sometimes termed a wine closet. The household department responsible for the storage, care and service of wine in a great mediaeval house was termed the buttery. Large wine cellars date back over 3700 years.</p>     
+    	</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="280">
+	<div class="container-fluid">
+   		<div class="navbar-header">
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        		<!-- every "icon-bar" is one line on the button -->
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>        		
+      		</button>
+      		<a class="navbar-brand" href="#">Wine celler</a>
+    	</div>
+    	<div class="collapse navbar-collapse" id="myNavbar">
+      		<ul class="nav navbar-nav">
+        		<li><a href="wineNG.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        		<li><a href="addWineNG.html">Add wine</a></li>
+            <li class="active"><a href="wineTableNG.html">Wine table</a></li>
+      		</ul>
+      		<ul class="nav navbar-nav navbar-right">
+        		<li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About us</a></li>
+      		</ul>
+    	</div>
+    </div>
+</nav>
+<!--include wineListNG.html into this html. It doesn't work in Chrome, work in Firefox browser.-->
+<div ng-include src="'wineListNG.html'"></div>
+</div>
+
+<script>
+  function WineController($scope){
+
+  // Define the model properties. The view will loop
+  // through the services array and genreate a li
+  // element for every one of its items.
+
+  $scope.wines = [
+    {
+      name: 'Red',
+      country: 'France',
+      price: 500,
+      year: 1999,
+      grapes: 'Red',
+      region: 'A',
+      active:false
+    },{
+      name: 'White',
+      country: 'France',
+      price: 300,
+      year: 1999,
+      grapes: 'White',
+      region: 'C',
+      active:false
+    },{
+      name: 'Rose',
+      country: 'France',
+      price: 220,
+      year: 2007,
+      grapes: 'Red',
+      region: 'A',
+      active:false
+    },{
+      name: 'Red',
+      country: 'Serbia',
+      price: 400,
+      year: 2007,
+      grapes: 'Red',
+      region: 'B',
+      active:false
+    },{
+      name: 'White',
+      country: 'Serbia',
+      price:200,
+      year: 2010,
+      grapes: 'White',
+      region: 'B',
+      active:false
+    },{
+      name: 'Rose',
+      country: 'Serbia',
+      price: 120,
+      year: 2009,
+      grapes: 'Rose',
+      region: 'A',
+      active:false
+    },{
+      name: 'Red',
+      country: 'Italia',
+      price: 520,
+      year: 1999,
+      grapes: 'Red',
+      region: 'C',
+      active:false
+    },{
+      name: 'White',
+      country: 'Italia',
+      year: 1993,
+      price: 250,
+      grapes: 'White',
+      region: 'A',
+      active:false
+    },{
+      name: 'Rose',
+      country: 'Italia',
+      year: 1997,
+      price: 250,
+      grapes: 'Red',
+      region: 'C',
+      active:false
+    }
+  ];
+
+  $scope.toggleActive = function(s){
+    s.active = !s.active;
+  };
+
+  // Helper method for calculating the total price
+
+  $scope.total = function(){
+
+  var total = 0;
+
+    // Use the angular forEach helper method to
+    // loop through the services array:
+
+    angular.forEach($scope.wines, function(s){
+      if (s.active){
+        total+= s.price;
+      }
+    });
+
+    return total;
+  };
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<!--<script src="js/wine-controllerNG.js"></script-->
+</body>
+</html>
