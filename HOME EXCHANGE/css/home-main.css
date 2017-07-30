@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.link, .location a, nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: .9em; }
+
+h2 {
+  padding-bottom: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #374249; }
+
+.location {
+  background-color: #f75311;
+  width: 25%;
+  text-align: left;
+  float: left;
+  height: 3em;
+  padding-left: 1em; }
+  .location a p {
+    float: left;
+    line-height: 3em;
+    text-decoration: underline; }
+  .location a img {
+    float: left;
+    margin-top: .5em;
+    height: 32px;
+    width: 32px; }
+
+nav {
+  width: 100%; }
+  nav ul {
+    background-color: #374249;
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      line-height: 3em;
+      text-align: center;
+      height: 3em;
+      padding: 0 1.5em; }
+      nav ul li a:hover {
+        text-decoration: underline; }
+
+section {
+  width: 100%;
+  text-align: center;
+  position: relative; }
+
+section:nth-child(even) {
+  background-color: #f3f7f9; }
+
+.first {
+  padding: 15em 15% 7em;
+  background: url(../images/intro.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  color: white;
+  position: relative; }
+  .first .intro {
+    width: 100%;
+    background-color: rgba(55, 66, 73, 0.6);
+    padding: .3em 0 0 0; }
+    .first .intro h1 {
+      font-size: 2.2em; }
+    .first .intro p {
+      font-size: .8em; }
+
+.btn, .second button {
+  border-radius: 20px;
+  border: 1px solid #cfd1d3;
+  padding: .7em;
+  background-color: white;
+  color: #797979;
+  cursor: pointer;
+  margin: 0 1em;
+  transition: all .3s ease-out; }
+
+.second {
+  padding: 1em 3em 1em 60%; }
+  .second button:hover {
+    background-color: #cfd1d3;
+    color: white; }
+
+.third {
+  padding: 2em 10%;
+  text-align: justify; }
+  .third .imageContainer {
+    width: 22%;
+    height: 15em;
+    margin: 1em .5em;
+    display: inline-block;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+    text-align: left; }
+    .third .imageContainer .hoverContainer {
+      height: 6em;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 1em 0 0 1em;
+      position: absolute;
+      overflow: hidden;
+      top: -5em;
+      opacity: 0;
+      -webkit-transition: all 0.8s ease-out;
+      -moz-transition: all 0.8s ease-out;
+      transition: all 0.8s ease-out; }
+    .third .imageContainer:hover .hoverContainer {
+      opacity: 1;
+      top: 0; }
+  /*.third .pic1 {
+    background-image: url("../images/1.jpg"); }
+  .third .pic2 {
+    background-image: url("../images/2.jpg"); }
+  .third .pic3 {
+    background-image: url("../images/3.jpg"); }
+  .third .pic4 {
+    background-image: url("../images/4.jpg"); }
+  .third .pic5 {
+    background-image: url("../images/5.jpg"); }
+  .third .pic6 {
+    background-image: url("../images/6.jpg"); }*/
+
+.fourth {
+  padding: 3em 20%;
+  color: #797979; }
+  .fourth p {
+    padding-bottom: 2em; }
+ /*.fourth button {
+    display: none; }*/
+  .fourth table {
+    width: 100%;
+    border-collapse: collapse; }
+    .fourth table th, .fourth table td {
+      padding: 1em;
+      text-align: center; }
+    .fourth table thead {
+      background-color: #f75311; }
+      .fourth table thead th {
+        color: white;
+        font-weight: 500; }
+       /* .fourth table thead th:first-child {
+          background-color: white; }*/
+      .fourth table tbody td {
+      border: 1px solid #797979; }
+      .fourth table tbody tr:nth-of-type(even) {
+      background-color: #fae6de; }
+      .fourth table tbody tr:last-child{
+      background-color: #374249;
+      height: 1em;
+      }
+      .fourth table tbody tr button{
+      background-color: #374249;
+      color: white;
+      border: none;
+      padding: 3px;
+      width: 100%;
+      }
+
+.fifth {
+  padding: 1em 1em 5em 3em; }
+  .fifth div, .fifth form {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top; }
+  .fifth form {
+    background-color: #f75311;
+    padding: 1em;
+    margin-left: 3%; }
+    .fifth form select, .fifth form input {
+      padding: .3em;
+      float: left;
+      margin-bottom: 1em; }
+    .fifth form select {
+      margin-right: 4%;
+      background-color: white;
+      width: 26%; }
+    .fifth form input[name="name"] {
+      width: 70%; }
+    .fifth form input[name="email"], .fifth form textarea {
+      width: 100%; }
+
+footer {
+  background-color: #374249;
+  text-align: center;
+  color: white;
+  padding: 1em 0; }
+
+.orangeText {
+  color: #f75311; }
+
+  /* added by Danijela*/ 
+  .details{
+    bottom: 0;
+    background-color: #374249;
+    color: white;
+    position: absolute;
+    border: none;
+    padding: 3px;
+    right: 0;
+    width: 100%;
+    height: 1.5em;
+  }
+
+  #map {
+    height: 300px;
+    width: 400px;
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    padding: 3em 5%;
+  }
+
+  img {
+    width: 100%;
+    height: 15em;
+  }
+
+  
+
+
+
+@media screen and (max-width: 1010px) {
+  .second {
+    padding-left: 40%; }
+
+  .third {
+    text-align: inherit; }
+    .third .imageContainer {
+      width: 45%; }
+
+  .fourth {
+    padding: 3em 10%; }
+
+  .fifth {
+    padding: 3em 15%; }
+   /* .fifth iframe {
+      display: block;
+      width: 80%;
+      margin: 0 auto; }*/
+    .fifth form {
+      display: block;
+      width: 100%;
+      margin: 0;
+      margin-top: 2em; } }
+@media screen and (max-width: 674px) {
+  .location {
+    width: 100%;
+    float: none; }
+
+  nav ul li {
+    display: block; }
+
+  section.first {
+    background-color: black;
+    background-image: none;
+    padding: 3em 0; }
+    section.first .intro {
+      background-color: black; }
+
+  .second {
+    padding-left: 3em; }
+    .second button {
+      margin: 0 .1em; }
+
+  .third .imageContainer {
+    width: 100%; }
+    .third .imageContainer .hoverContainer {
+      top: 0;
+      opacity: 1; }
+
+  .fourth button {
+    display: block;
+    margin: 0 auto; }
+  /*.fourth table {
+    display: none; }*/
+
+  /*.fifth iframe {
+    width: 90%; } */
+}
+
+
+/*# sourceMappingURL=main.css.map */
