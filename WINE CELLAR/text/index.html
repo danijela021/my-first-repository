@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Wine cellar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<script src="jquery-1.11.0.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/wines.js"></script>
+</head>
+<body>
+	<div>
+		<table id="wineInput">							
+			<tr>
+				<td>Name: </td>
+				<td><input type="text" name="nameInput"/></td>
+			</tr>								
+			<tr>
+				<td>Description: </td>
+				<td><textarea rows="5" cols="15" name="descriptionInput"></textarea></td>
+			</tr>
+			<tr>
+				<td>Year: </td>
+				<td><input type="text" name="yearInput"/></td>
+			</tr>
+			<tr>
+				<td>Grapes: </td>
+				<td><input type="text" name="grapesInput"/></td>
+			</tr>
+			<tr>
+				<td>Country: </td>
+				<td><input type="text" name="countryInput"/></td>
+			</tr>
+			<tr>
+				<td>Region: </td>
+				<td><input type="text" name="regionInput"/></td>
+			</tr>	
+			<tr>
+				<td><input id="addBtn" type="submit" value="Dodaj"/></td>					
+				<td><span id="errMsgAddWine" style="color: red"></span></td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div>
+
+		<span id="back"><a href="#">Back</a>&nbsp;</span><a id="next" href="#">Next</a>
+			
+		<table border="1">
+			<thead>
+				<tr bgcolor="lightgrey">
+					<th width="300">
+						Name: <input id="searchName" type="search" placeholder="All products"/> 
+						<input type="button" class="sortBtn" name="name" value="sort"/>
+					</th>
+					<th>Year <input type="button" class="sortBtn" name="year" value="sort"/></th>
+					<th>Grapes <input type="button" class="sortBtn" name="grapes" value="sort"/></th>
+					<th>Country <input type="button" class="sortBtn" name="country" value="sort"/></th>
+					<th>Region <input type="button" class="sortBtn" name="region" value="sort"/></th>
+				</tr>	
+			</thead>
+			<tbody id="wineData"></tbody>			
+		</table>
+
+		<span id="errMsgGetWines" style="color: red"></span>
+	</div>
+
+</body>	
+</html>
