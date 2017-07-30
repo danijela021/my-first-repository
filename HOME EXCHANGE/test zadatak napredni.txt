@@ -1,0 +1,7 @@
+﻿Vaš zadatak je da izmenite projekat koji vam šalje na sledeći način:
+Prepraviti formu za logovanje koje se nalazi na dnu stranice
+Ubaciti mapu pomoću Angularjs - URAĐENO
+Ukloniti tabelu i dodati dugme „Više“ ispod svake slike pomoću kojeg će da se pojavi nova tabela 
+(koja sadrži Lokaciju, Adresu, Broj soba, kvadraturu i cenu na mesečno nivou i ukupnu cenu stana.
+Dodati Search koji će omogućiti pretraživanje u tabeli koju kreirate. - URAĐENO search by region
+Treba napraviti niz objekata koji će da sadrži sve potrebne informacije koje treba da imate u zadatku.
